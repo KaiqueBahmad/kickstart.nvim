@@ -227,6 +227,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  unpack(require 'custom.plugins'),
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
@@ -259,6 +260,7 @@ require('lazy').setup({
   --
   -- This is often very useful to both group configuration, as well as handle
   -- lazy loading plugins that don't need to be loaded immediately at startup.
+
   --
   -- For example, in the following configuration, we use:
   --  event = 'VimEnter'
@@ -970,7 +972,7 @@ require('lazy').setup({
   },
 })
 
-require('custom.plugins')
+require 'custom'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
